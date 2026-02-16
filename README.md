@@ -3,7 +3,7 @@
 [![spm-ready](https://img.shields.io/badge/spm-ready-b68f6a.svg?logo=gitlfs&logoColor=white)](https://developer.apple.com/documentation/xcode/swift-packages)
 [![platforms](https://img.shields.io/badge/platforms-iOS%2017+%20%7C%20macOS%2014+%20-lightgrey.svg?logo=apple&logoColor=white)](https://en.wikipedia.org/wiki/List_of_Apple_operating_systems)
 [![license](https://img.shields.io/badge/license-MIT-67ac5b.svg?logo=googledocs&logoColor=white)](https://en.wikipedia.org/wiki/MIT_License)
-[![release](https://github.com/thatfactory/observable-websocket-client/actions/workflows/release.yml/badge.svg)](https://github.com/thatfactory/observable-websocket-client/actions/workflows/release.yml)
+[![release](https://github.com/thatfactory/observable-websocket/actions/workflows/release.yml/badge.svg)](https://github.com/thatfactory/observable-websocket/actions/workflows/release.yml)
 
 # ObservableWebSocket ⚡
 A Swift package that establishes [WebSocket connections](https://en.wikipedia.org/wiki/WebSocket) and publishes received messages and errors from an [Observable Object](https://developer.apple.com/documentation/combine/observableobject).
@@ -98,7 +98,7 @@ wsClient.sendMessage("A String WebSocket message")
 ## Demo
 In this demo app, the `ObservableWebSocket` connects to a [Kucoin WebSocket server](https://www.kucoin.com/docs/websocket/introduction) and sends `ping` messages every `pingTimerInterval` to keep the connection alive. The server responds with `welcome` and `pong` messages:
 
-https://github.com/thatfactory/observable-websocket-client/assets/664951/2c8897e4-6d25-413b-9f12-d61b32ebbf0d
+https://github.com/thatfactory/observable-websocket/assets/664951/2c8897e4-6d25-413b-9f12-d61b32ebbf0d
 
 ## Integration
 ### Xcode
@@ -112,8 +112,8 @@ In your `Package.swift`, add `ObservableWebSocket` as a dependency:
 ```swift
 dependencies: [
     .package(
-        url: "https://github.com/thatfactory/observable-websocket-client",
-        from: "0.1.0"
+        url: "https://github.com/thatfactory/observable-websocket",
+        from: "0.2.0"
     )
 ]
 ```
@@ -127,7 +127,7 @@ targets: [
         dependencies: [
             .product(
                 name: "ObservableWebSocket",
-                package: "observable-websocket-client"
+                package: "observable-websocket"
             )
         ]
     )
@@ -135,4 +135,3 @@ targets: [
 ```
 
 Run: `swift build`
-
