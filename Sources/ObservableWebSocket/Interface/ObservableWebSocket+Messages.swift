@@ -1,5 +1,5 @@
 //
-//  ObservableWebSocketClient+Messages.swift
+//  ObservableWebSocket+Messages.swift
 //
 //
 //  Created by Fernando Fernandes on 17.04.24.
@@ -7,14 +7,14 @@
 
 import Foundation
 
-public extension ObservableWebSocketClient {
+public extension ObservableWebSocket {
 
     /// Sends the WebSocket server the given message, as is.
     ///
     /// Message replies/errors can be observed via:
     /// ```
-    /// ObservableWebSocketClient.getter:codableMessage
-    /// ObservableWebSocketClient.getter:error
+    /// ObservableWebSocket.getter:codableMessage
+    /// ObservableWebSocket.getter:error
     /// ```
     ///
     /// - Parameters:
@@ -39,8 +39,8 @@ public extension ObservableWebSocketClient {
     ///
     /// Message replies/errors can be observed via:
     /// ```
-    /// ObservableWebSocketClient.getter:codableMessage
-    /// ObservableWebSocketClient.getter:error
+    /// ObservableWebSocket.getter:codableMessage
+    /// ObservableWebSocket.getter:error
     /// ```
     ///
     /// - Parameters:

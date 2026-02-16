@@ -1,5 +1,5 @@
 //
-//  ObservableWebSocketClientError+Localization.swift
+//  ObservableWebSocketError+Localization.swift
 //
 //
 //  Created by Fernando Fernandes on 28.02.24.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension ObservableWebSocketClientError: LocalizedError {
+extension ObservableWebSocketError: LocalizedError {
     public var errorDescription: String? {
         switch self {
         case .decodingMessage(let error):

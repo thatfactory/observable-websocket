@@ -1,5 +1,5 @@
 //
-//  ObservableWebSocketClient+Codable.swift
+//  ObservableWebSocket+Codable.swift
 //
 //
 //  Created by Fernando Fernandes on 06.03.24.
@@ -10,7 +10,7 @@ import Toolbox
 
 /// Required for encoding/decoding an observable object class. Refer to:
 /// https://www.hackingwithswift.com/books/ios-swiftui/encoding-an-observableobject-class
-extension ObservableWebSocketClient {
+extension ObservableWebSocket {
     public enum CodingKeys: String, CodingKey {
         case id
         case websocketURL

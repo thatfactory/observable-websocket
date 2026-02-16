@@ -1,5 +1,5 @@
 //
-//  ObservableWebSocketClient+Observation.swift
+//  ObservableWebSocket+Observation.swift
 //
 //
 //  Created by Fernando Fernandes on 17.04.24.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension ObservableWebSocketClient {
+extension ObservableWebSocket {
 
     func observeWebSocketConnection() {
 

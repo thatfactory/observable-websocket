@@ -5,7 +5,7 @@
 [![license](https://img.shields.io/badge/license-MIT-67ac5b.svg?logo=googledocs&logoColor=white)](https://en.wikipedia.org/wiki/MIT_License)
 [![release](https://github.com/thatfactory/observable-websocket-client/actions/workflows/release.yml/badge.svg)](https://github.com/thatfactory/observable-websocket-client/actions/workflows/release.yml)
 
-# ObservableWebSocketClient ⚡
+# ObservableWebSocket ⚡
 A Swift package that establishes [WebSocket connections](https://en.wikipedia.org/wiki/WebSocket) and publishes received messages and errors from an [Observable Object](https://developer.apple.com/documentation/combine/observableobject).
 
 ## Usage
@@ -14,7 +14,7 @@ A Swift package that establishes [WebSocket connections](https://en.wikipedia.or
 
 ```swift
 let websocketURL = URL(string: "wss://websocket-endpoint.com")!
-let wsClient = ObservableWebSocketClient(websocketURL: websocketURL)
+let wsClient = ObservableWebSocket(websocketURL: websocketURL)
 
 /*
  A `URLSessionWebSocketTask` is created and resumed just after the
@@ -67,7 +67,7 @@ Passing in a `pingTimerInterval` during the client initialization will cause a t
 
 ```swift
 let websocketURL = URL(string: "wss://endpoint.com")!
-let wsClient = ObservableWebSocketClient(
+let wsClient = ObservableWebSocket(
     websocketURL: websocketURL,
     pingTimerInterval: 18, // Every 18 seconds
     pingMessage: "{\"type\": \"ping\"}" // The format is defined by the WS server
@@ -79,7 +79,7 @@ To generate a unique ID for the ping-type message, use the closure in `pingMessa
 
 ```swift
 let websocketURL = URL(string: "wss://endpoint.com")!
-let wsClient = ObservableWebSocketClient(
+let wsClient = ObservableWebSocket(
     websocketURL: websocketURL,
     pingTimerInterval: 18, // Every 18 seconds
     pingMessageWithGeneratedId: { generatedId in
@@ -89,14 +89,14 @@ let wsClient = ObservableWebSocketClient(
 ```
 
 ### Sending messages
-After the client is initialized and a connection is established, messages can be sent via the `ObservableWebSocketClient.sendMessage(_:)` API:
+After the client is initialized and a connection is established, messages can be sent via the `ObservableWebSocket.sendMessage(_:)` API:
 
 ```swift
 wsClient.sendMessage("A String WebSocket message")
 ```
 
 ## Demo
-In this demo app, the `ObservableWebSocketClient` connects to a [Kucoin WebSocket server](https://www.kucoin.com/docs/websocket/introduction) and sends `ping` messages every `pingTimerInterval` to keep the connection alive. The server responds with `welcome` and `pong` messages:
+In this demo app, the `ObservableWebSocket` connects to a [Kucoin WebSocket server](https://www.kucoin.com/docs/websocket/introduction) and sends `ping` messages every `pingTimerInterval` to keep the connection alive. The server responds with `welcome` and `pong` messages:
 
 https://github.com/thatfactory/observable-websocket-client/assets/664951/2c8897e4-6d25-413b-9f12-d61b32ebbf0d
 
@@ -107,7 +107,7 @@ Use Xcode's [built-in support for SPM](https://developer.apple.com/documentation
 *or...*
 
 ### Package.swift
-In your `Package.swift`, add `ObservableWebSocketClient` as a dependency:
+In your `Package.swift`, add `ObservableWebSocket` as a dependency:
 
 ```swift
 dependencies: [
@@ -126,7 +126,7 @@ targets: [
         name: "YourTarget",
         dependencies: [
             .product(
-                name: "ObservableWebSocketClient",
+                name: "ObservableWebSocket",
                 package: "observable-websocket-client"
             )
         ]

@@ -3,15 +3,15 @@
 import PackageDescription
 
 let package = Package(
-    name: "ObservableWebSocketClient",
+    name: "ObservableWebSocket",
     platforms: [
         .iOS(.v17),
         .macOS(.v14)
     ],
     products: [
         .library(
-            name: "ObservableWebSocketClient",
-            targets: ["ObservableWebSocketClient"]
+            name: "ObservableWebSocket",
+            targets: ["ObservableWebSocket"]
         )
     ],
     dependencies: [
@@ -22,7 +22,7 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "ObservableWebSocketClient",
+            name: "ObservableWebSocket",
             dependencies: [
                 .product(
                     name: "Toolbox",
@@ -31,8 +31,8 @@ let package = Package(
             ]
         ),
         .testTarget(
-            name: "ObservableWebSocketClientTests",
-            dependencies: ["ObservableWebSocketClient"]
+            name: "ObservableWebSocketTests",
+            dependencies: ["ObservableWebSocket"]
         )
     ]
 )

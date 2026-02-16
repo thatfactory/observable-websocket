@@ -1,5 +1,5 @@
 //
-//  ObservableWebSocketClient+Connection.swift
+//  ObservableWebSocket+Connection.swift
 //  
 //
 //  Created by Fernando Fernandes on 18.04.24.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public extension ObservableWebSocketClient {
+public extension ObservableWebSocket {
 
     /// Sends a close frame with an optional close reason.
     ///

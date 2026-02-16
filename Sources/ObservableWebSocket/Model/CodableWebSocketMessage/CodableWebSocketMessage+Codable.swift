@@ -29,7 +29,7 @@ public extension CodableWebSocketMessage {
             message = .data(messageData)
         default:
             let codableError = CodableWebSocketMessage.unknownMessageTypeError(isEncoding: false)
-            throw ObservableWebSocketClientError.decodingMessage(codableError)
+            throw ObservableWebSocketError.decodingMessage(codableError)
         }
     }
 
@@ -47,7 +47,7 @@ public extension CodableWebSocketMessage {
             try container.encode(messageData, forKey: .messageData)
         @unknown default:
             let codableError = CodableWebSocketMessage.unknownMessageTypeError(isEncoding: true)
-            throw ObservableWebSocketClientError.encodingMessage(codableError)
+            throw ObservableWebSocketError.encodingMessage(codableError)
         }
     }
 }

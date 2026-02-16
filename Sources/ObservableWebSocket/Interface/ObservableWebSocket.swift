@@ -1,5 +1,5 @@
 //
-//  ObservableWebSocketClient.swift
+//  ObservableWebSocket.swift
 //
 //
 //  Created by Fernando Fernandes on 28.02.24.
@@ -11,7 +11,7 @@ import Toolbox
 
 /// Establishes a WebSocket connection using the given `websocketURL`.
 /// Publishes received messages and errors.
-public final class ObservableWebSocketClient: Identifiable, Equatable, Codable, ObservableObject {
+public final class ObservableWebSocket: Identifiable, Equatable, Codable, ObservableObject {
 
     /// Publishes received messages after the connection is successfully established.
     @Published public var codableMessage: CodableWebSocketMessage?
@@ -37,7 +37,7 @@ public final class ObservableWebSocketClient: Identifiable, Equatable, Codable, 
 
     // MARK: - Lifecycle
 
-    /// Creates an `ObservableWebSocketClient` instance.
+    /// Creates an `ObservableWebSocket` instance.
     ///
     /// - Parameters:
     ///   - id: Optional unique ID of the instance. If absent, an instance of `UUID` will be used instead.
@@ -99,7 +99,7 @@ public final class ObservableWebSocketClient: Identifiable, Equatable, Codable, 
 
 // MARK: - Private
 
-private extension ObservableWebSocketClient {
+private extension ObservableWebSocket {
     func startPingTimer() {
         guard let pingTimerInterval,
               pingMessage?.isEmpty == false || pingMessageWithGeneratedId != nil
