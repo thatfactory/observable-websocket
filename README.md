@@ -1,10 +1,10 @@
-[![swift-version](https://img.shields.io/badge/swift-6.2-ea7a50.svg?logo=swift&logoColor=white)](https://developer.apple.com/swift/)
-[![xcode-version](https://img.shields.io/badge/xcode-26.2-50ace8.svg?logo=xcode&logoColor=white)](https://developer.apple.com/xcode/)
-[![spm-ready](https://img.shields.io/badge/spm-ready-b68f6a.svg?logo=gitlfs&logoColor=white)](https://developer.apple.com/documentation/xcode/swift-packages)
-[![platforms](https://img.shields.io/badge/platforms-iOS%2017+%20%7C%20macOS%2014+%20-lightgrey.svg?logo=apple&logoColor=white)](https://en.wikipedia.org/wiki/List_of_Apple_operating_systems)
-[![license](https://img.shields.io/badge/license-MIT-67ac5b.svg?logo=googledocs&logoColor=white)](https://en.wikipedia.org/wiki/MIT_License)
-[![ci](https://github.com/thatfactory/observable-websocket/actions/workflows/ci.yml/badge.svg)](https://github.com/thatfactory/observable-websocket/actions/workflows/ci.yml)
-[![release](https://github.com/thatfactory/observable-websocket/actions/workflows/release.yml/badge.svg)](https://github.com/thatfactory/observable-websocket/actions/workflows/release.yml)
+[![Swift](https://img.shields.io/badge/swift-6.2-ea7a50.svg?logo=swift&logoColor=white)](https://developer.apple.com/swift/)
+[![Xcode](https://img.shields.io/badge/xcode-26.2-50ace8.svg?logo=xcode&logoColor=white)](https://developer.apple.com/xcode/)
+[![SPM](https://img.shields.io/badge/spm-ready-b68f6a.svg?logo=gitlfs&logoColor=white)](https://developer.apple.com/documentation/xcode/swift-packages)
+[![Platforms](https://img.shields.io/badge/platforms-iOS%2017+%20%7C%20macOS%2014+%20-lightgrey.svg?logo=apple&logoColor=white)](https://en.wikipedia.org/wiki/List_of_Apple_operating_systems)
+[![License](https://img.shields.io/badge/license-MIT-67ac5b.svg?logo=googledocs&logoColor=white)](https://en.wikipedia.org/wiki/MIT_License)
+[![CI](https://github.com/thatfactory/observable-websocket/actions/workflows/ci.yml/badge.svg)](https://github.com/thatfactory/observable-websocket/actions/workflows/ci.yml)
+[![Release](https://github.com/thatfactory/observable-websocket/actions/workflows/release.yml/badge.svg)](https://github.com/thatfactory/observable-websocket/actions/workflows/release.yml)
 
 # ObservableWebSocket ⚡
 A Swift package that establishes [WebSocket connections](https://en.wikipedia.org/wiki/WebSocket) and publishes received messages and errors from an [Observable Object](https://developer.apple.com/documentation/combine/observableobject).
