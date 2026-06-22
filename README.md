@@ -1,8 +1,8 @@
 <p align="center">
-  <a href="https://developer.apple.com/swift/"><img alt="Swift" src="https://img.shields.io/badge/Swift-6.2-ea7a50.svg?logo=swift&logoColor=white"></a>
-  <a href="https://developer.apple.com/xcode/"><img alt="Xcode" src="https://img.shields.io/badge/Xcode-26.3-50ace8.svg?logo=xcode&logoColor=white"></a>
+  <a href="https://developer.apple.com/swift/"><img alt="Swift" src="https://img.shields.io/badge/Swift-6.4-ea7a50.svg?logo=swift&logoColor=white"></a>
+  <a href="https://developer.apple.com/xcode/"><img alt="Xcode" src="https://img.shields.io/badge/Xcode-27-50ace8.svg?logo=xcode&logoColor=white"></a>
+  <a href="https://en.wikipedia.org/wiki/List_of_Apple_operating_systems"><img alt="Platforms" src="https://img.shields.io/badge/Platforms-iOS%2027%20%7C%20macOS%2027-lightgrey.svg?logo=apple&logoColor=white"></a>
   <a href="https://developer.apple.com/documentation/xcode/swift-packages"><img alt="SPM" src="https://img.shields.io/badge/SPM-ready-b68f6a.svg?logo=gitlfs&logoColor=white"></a>
-  <a href="https://en.wikipedia.org/wiki/List_of_Apple_operating_systems"><img alt="Platforms" src="https://img.shields.io/badge/Platforms-iOS%2017+%20%7C%20macOS%2014+%20-lightgrey.svg?logo=apple&logoColor=white"></a>
   <a href="https://en.wikipedia.org/wiki/MIT_License"><img alt="License" src="https://img.shields.io/badge/License-MIT-67ac5b.svg?logo=googledocs&logoColor=white"></a>
   <a href="https://github.com/thatfactory/observable-websocket/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/thatfactory/observable-websocket/actions/workflows/ci.yml/badge.svg"></a>
   <a href="https://github.com/thatfactory/observable-websocket/actions/workflows/release.yml"><img alt="Release" src="https://github.com/thatfactory/observable-websocket/actions/workflows/release.yml/badge.svg"></a>
@@ -116,7 +116,7 @@ In your `Package.swift`, add `ObservableWebSocket` as a dependency:
 dependencies: [
     .package(
         url: "https://github.com/thatfactory/observable-websocket",
-        from: "0.2.0"
+        from: "0.2.1"
     )
 ]
 ```

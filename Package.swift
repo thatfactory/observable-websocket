@@ -1,12 +1,12 @@
-// swift-tools-version: 6.2
+// swift-tools-version:6.4
 
 import PackageDescription
 
 let package = Package(
     name: "ObservableWebSocket",
     platforms: [
-        .iOS(.v17),
-        .macOS(.v14)
+        .iOS(.v27),
+        .macOS(.v27)
     ],
     products: [
         .library(
@@ -17,7 +17,7 @@ let package = Package(
     dependencies: [
         .package(
             url: "https://github.com/thatfactory/toolbox.git",
-            from: "0.1.0"
+            from: "0.1.1"
         )
     ],
     targets: [
