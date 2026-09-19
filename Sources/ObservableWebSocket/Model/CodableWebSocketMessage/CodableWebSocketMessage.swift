@@ -19,8 +19,8 @@ public struct CodableWebSocketMessage: Equatable, Codable, Identifiable {
 
 // MARK: - Interface
 
-public extension CodableWebSocketMessage {
-    func messageAsString() -> String {
+extension CodableWebSocketMessage {
+    public func messageAsString() -> String {
         switch message {
         case .string(let text):
             return text

@@ -116,7 +116,7 @@ In your `Package.swift`, add `ObservableWebSocket` as a dependency:
 dependencies: [
     .package(
         url: "https://github.com/thatfactory/observable-websocket",
-        from: "0.2.1"
+        from: "0.2.2"
     )
 ]
 ```

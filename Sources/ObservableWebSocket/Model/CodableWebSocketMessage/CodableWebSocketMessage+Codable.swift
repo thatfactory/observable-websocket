@@ -1,6 +1,6 @@
 //
 //  CodableWebSocketMessage+Codable.swift
-//  
+//
 //
 //  Created by Fernando Fernandes on 28.02.24.
 //
@@ -8,15 +8,15 @@
 import Foundation
 import Toolbox
 
-public extension CodableWebSocketMessage {
-    enum CodingKeys: String, CodingKey {
+extension CodableWebSocketMessage {
+    public enum CodingKeys: String, CodingKey {
         case messageType
         case messageData
     }
 
     // MARK: - Decode
 
-    init(from decoder: Decoder) throws {
+    public init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let messageType = try container.decode(String.self, forKey: .messageType)
 
@@ -35,7 +35,7 @@ public extension CodableWebSocketMessage {
 
     // MARK: - Encode
 
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: any Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
 
         switch message {
@@ -54,8 +54,8 @@ public extension CodableWebSocketMessage {
 
 // MARK: - Private
 
-private extension CodableWebSocketMessage {
-    static func unknownMessageTypeError(isEncoding: Bool) -> CodableError {
+extension CodableWebSocketMessage {
+    fileprivate static func unknownMessageTypeError(isEncoding: Bool) -> CodableError {
         let message = "Unknown message type"
         return .init(
             errorType: "Serialization",

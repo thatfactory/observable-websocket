@@ -9,7 +9,6 @@ import Foundation
 import Toolbox
 
 public final class ObservableWebSocketService: ObservableObject, @unchecked Sendable {
-
     @Published public var message: URLSessionWebSocketTask.Message?
 
     @Published public var codableError: CodableError?
@@ -31,9 +30,8 @@ public final class ObservableWebSocketService: ObservableObject, @unchecked Send
 
 // MARK: - Interface
 
-public extension ObservableWebSocketService {
-
-    func send(message: String) {
+extension ObservableWebSocketService {
+    public func send(message: String) {
         let wsMessage = URLSessionWebSocketTask.Message.string(message)
         webSocketTask?.send(wsMessage) { [weak self] error in
             guard let self, let error else { return }
@@ -44,22 +42,23 @@ public extension ObservableWebSocketService {
         }
     }
 
-    func close(with closeCode: URLSessionWebSocketTask.CloseCode = .normalClosure,
-               reason: String? = nil) {
+    public func close(
+        with closeCode: URLSessionWebSocketTask.CloseCode = .normalClosure,
+        reason: String? = nil
+    ) {
         webSocketTask?.cancel(with: closeCode, reason: reason?.data(using: .utf8))
     }
 }
 
 // MARK: - Private
 
-private extension ObservableWebSocketService {
-
-    func initializeWebSocket() {
+extension ObservableWebSocketService {
+    fileprivate func initializeWebSocket() {
         webSocketTask = session.webSocketTask(with: websocketURL)
         webSocketTask?.resume()
     }
 
-    func receiveMessage() {
+    fileprivate func receiveMessage() {
         webSocketTask?.receive { [weak self] result in
             Task { @MainActor [weak self] in
                 guard let self else { return }

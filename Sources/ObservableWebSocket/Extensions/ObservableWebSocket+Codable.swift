@@ -20,7 +20,7 @@ extension ObservableWebSocket {
 
     // MARK: - Encode
 
-    public func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: any Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(id, forKey: .id)
         try container.encode(websocketURL, forKey: .websocketURL)
@@ -30,7 +30,7 @@ extension ObservableWebSocket {
 
     // MARK: - Decode
 
-    public convenience init(from decoder: Decoder) throws {
+    public convenience init(from decoder: any Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         let id = try container.decode(UUID.self, forKey: .id)
         let websocketURL = try container.decode(URL.self, forKey: .websocketURL)

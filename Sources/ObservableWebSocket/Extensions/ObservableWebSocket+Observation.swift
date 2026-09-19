@@ -8,9 +8,7 @@
 import Foundation
 
 extension ObservableWebSocket {
-
     func observeWebSocketConnection() {
-
         // MARK: Messages
 
         service.$message.sink { [weak self] message in
