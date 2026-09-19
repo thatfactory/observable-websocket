@@ -7,8 +7,7 @@
 
 import Foundation
 
-public extension ObservableWebSocket {
-
+extension ObservableWebSocket {
     /// Sends the WebSocket server the given message, as is.
     ///
     /// Message replies/errors can be observed via:
@@ -17,8 +16,7 @@ public extension ObservableWebSocket {
     /// ObservableWebSocket.getter:error
     /// ```
     ///
-    /// - Parameters:
-    ///   - message: The message to be sent to the server.
+    /// - Parameter message: The message to be sent to the server.
     ///
     /// - Usage Example:
     /// ```
@@ -31,7 +29,7 @@ public extension ObservableWebSocket {
     /// ```
     /// {"id": "myId", "type": "ping"}
     /// ```
-    func sendMessage(_ message: String) {
+    public func sendMessage(_ message: String) {
         service.send(message: message)
     }
 
@@ -43,8 +41,7 @@ public extension ObservableWebSocket {
     /// ObservableWebSocket.getter:error
     /// ```
     ///
-    /// - Parameters:
-    ///   - idInjector: A closure that takes a `String` (the generated message ID) and returns
+    /// - Parameter idInjector: A closure that takes a `String` (the generated message ID) and returns
     ///   a modified message string incorporating the generated message ID.
     ///
     /// - Usage Example:
@@ -58,7 +55,7 @@ public extension ObservableWebSocket {
     /// ```
     /// {"id": "123e4567-e89b-12d3-a456-426614174000", "type": "ping"}
     /// ```
-    func sendMessageWithGeneratedId(_ idInjector: (@Sendable (String) -> String)) {
+    public func sendMessageWithGeneratedId(_ idInjector: (@Sendable (String) -> String)) {
         let uniqueId = UUID().uuidString
         let messageWithId = idInjector(uniqueId)
         service.send(message: messageWithId)

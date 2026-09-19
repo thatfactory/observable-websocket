@@ -5,7 +5,7 @@
 //  Created by Fernando Fernandes on 28.02.24.
 //
 
-import Foundation
+public import Foundation
 
 /// Defines a `Codable` wrapper for `URLSessionWebSocketTask.Message`.
 public struct CodableWebSocketMessage: Equatable, Codable, Identifiable {
@@ -19,8 +19,8 @@ public struct CodableWebSocketMessage: Equatable, Codable, Identifiable {
 
 // MARK: - Interface
 
-public extension CodableWebSocketMessage {
-    func messageAsString() -> String {
+extension CodableWebSocketMessage {
+    public func messageAsString() -> String {
         switch message {
         case .string(let text):
             return text

@@ -5,12 +5,11 @@
 //  Created by Fernando Fernandes on 17.04.24.
 //
 
+import Combine
 import Foundation
 
 extension ObservableWebSocket {
-
     func observeWebSocketConnection() {
-
         // MARK: Messages
 
         service.$message.sink { [weak self] message in

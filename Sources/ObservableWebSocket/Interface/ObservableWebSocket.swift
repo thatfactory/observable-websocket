@@ -5,14 +5,13 @@
 //  Created by Fernando Fernandes on 28.02.24.
 //
 
-import Combine
-import Foundation
-import Toolbox
+public import Combine
+public import Foundation
+public import Toolbox
 
 /// Establishes a WebSocket connection using the given `websocketURL`.
 /// Publishes received messages and errors.
 public final class ObservableWebSocket: Identifiable, Equatable, Codable, ObservableObject {
-
     /// Publishes received messages after the connection is successfully established.
     @Published public var codableMessage: CodableWebSocketMessage?
 
@@ -47,7 +46,7 @@ public final class ObservableWebSocket: Identifiable, Equatable, Codable, Observ
     ///      wss://endpoint.com
     ///      ```
     ///   - message: Optional `CodableWebSocketMessage`. Useful for mocking the instance's state.
-    ///   - error: Optional `CodableError`. Useful for mocking the instance's state.
+    ///   - codableError: Optional `CodableError`. Useful for mocking the instance's state.
     ///   - pingTimerInterval: The value passed in (`TimeInterval`) will cause a timer to
     ///   continuously send ping-type messages to the WS server, keeping the connection alive.
     ///   - pingMessage: The ping-type `String` message.
@@ -72,13 +71,15 @@ public final class ObservableWebSocket: Identifiable, Equatable, Codable, Observ
     ///       // a message like this:
     ///       // {"id": "some-random-uuid", "type": "ping"}
     ///       ```
-    public init(id: UUID = .init(),
-                websocketURL: URL,
-                message: CodableWebSocketMessage? = nil,
-                codableError: CodableError? = nil,
-                pingTimerInterval: TimeInterval? = nil,
-                pingMessage: String? = nil,
-                pingMessageWithGeneratedId: (@Sendable (String) -> String)? = nil) {
+    public init(
+        id: UUID = .init(),
+        websocketURL: URL,
+        message: CodableWebSocketMessage? = nil,
+        codableError: CodableError? = nil,
+        pingTimerInterval: TimeInterval? = nil,
+        pingMessage: String? = nil,
+        pingMessageWithGeneratedId: (@Sendable (String) -> String)? = nil
+    ) {
         self.id = id
         self.websocketURL = websocketURL
         self.codableMessage = message
@@ -99,24 +100,26 @@ public final class ObservableWebSocket: Identifiable, Equatable, Codable, Observ
 
 // MARK: - Private
 
-private extension ObservableWebSocket {
-    func startPingTimer() {
+extension ObservableWebSocket {
+    fileprivate func startPingTimer() {
         guard let pingTimerInterval,
-              pingMessage?.isEmpty == false || pingMessageWithGeneratedId != nil
+            pingMessage?.isEmpty == false || pingMessageWithGeneratedId != nil
         else { return }
 
         let service = service
         if let pingMessage, !pingMessage.isEmpty {
             pingTimer = Timer.scheduledTimer(
-                withTimeInterval: pingTimerInterval, repeats: true) { _ in
-                    service.send(message: pingMessage)
-                }
+                withTimeInterval: pingTimerInterval, repeats: true
+            ) { _ in
+                service.send(message: pingMessage)
+            }
         } else if let pingMessageWithGeneratedId {
             pingTimer = Timer.scheduledTimer(
-                withTimeInterval: pingTimerInterval, repeats: true) { _ in
-                    let messageWithId = pingMessageWithGeneratedId(UUID().uuidString)
-                    service.send(message: messageWithId)
-                }
+                withTimeInterval: pingTimerInterval, repeats: true
+            ) { _ in
+                let messageWithId = pingMessageWithGeneratedId(UUID().uuidString)
+                service.send(message: messageWithId)
+            }
         }
     }
 }
