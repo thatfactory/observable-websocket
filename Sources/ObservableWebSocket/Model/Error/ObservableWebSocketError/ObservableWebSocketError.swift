@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import Toolbox
+public import Toolbox
 
 public enum ObservableWebSocketError: Error, Equatable, Codable {
     case decodingMessage(CodableError)

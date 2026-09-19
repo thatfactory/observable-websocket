@@ -26,7 +26,7 @@ let package = Package(
     dependencies: [
         .package(
             url: "https://github.com/thatfactory/toolbox.git",
-            from: "0.1.1"
+            from: "0.1.2"
         )
     ],
     targets: [

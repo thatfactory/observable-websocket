@@ -5,8 +5,9 @@
 //  Created by Fernando Fernandes on 02.01.24.
 //
 
-import Foundation
-import Toolbox
+public import Combine
+public import Foundation
+public import Toolbox
 
 public final class ObservableWebSocketService: ObservableObject, @unchecked Sendable {
     @Published public var message: URLSessionWebSocketTask.Message?

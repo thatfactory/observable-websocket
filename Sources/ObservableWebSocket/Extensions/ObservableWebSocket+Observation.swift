@@ -5,6 +5,7 @@
 //  Created by Fernando Fernandes on 17.04.24.
 //
 
+import Combine
 import Foundation
 
 extension ObservableWebSocket {

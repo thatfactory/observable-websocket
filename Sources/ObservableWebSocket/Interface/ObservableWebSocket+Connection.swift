@@ -5,7 +5,7 @@
 //  Created by Fernando Fernandes on 18.04.24.
 //
 
-import Foundation
+public import Foundation
 
 extension ObservableWebSocket {
     /// Sends a close frame with an optional close reason.

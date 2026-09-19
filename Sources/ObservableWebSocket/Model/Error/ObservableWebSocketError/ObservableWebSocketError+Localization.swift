@@ -5,7 +5,7 @@
 //  Created by Fernando Fernandes on 28.02.24.
 //
 
-import Foundation
+public import Foundation
 
 extension ObservableWebSocketError: LocalizedError {
     public var errorDescription: String? {

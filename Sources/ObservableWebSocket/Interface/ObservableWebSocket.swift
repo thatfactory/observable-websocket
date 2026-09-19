@@ -5,9 +5,9 @@
 //  Created by Fernando Fernandes on 28.02.24.
 //
 
-import Combine
-import Foundation
-import Toolbox
+public import Combine
+public import Foundation
+public import Toolbox
 
 /// Establishes a WebSocket connection using the given `websocketURL`.
 /// Publishes received messages and errors.
